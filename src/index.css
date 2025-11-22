@@ -15,10 +15,20 @@
   html {
     font-family: var(--font-sans);
     font-feature-settings: "rlig" 1, "calt" 1;
+    scroll-behavior: smooth;
+    background: #000;
   }
 
   body {
     @apply antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
